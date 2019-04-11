@@ -1,4 +1,4 @@
-<html>
+<html lang="vn">
 <head>
   <title>Customer List</title>
   <meta charset="utf-8">
@@ -18,6 +18,7 @@ $dbname = "quan_li_nha_tro";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+mysqli_set_charset($conn, 'UTF8');
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -29,9 +30,9 @@ if ($conn->connect_error) {
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"  aria-expanded="false">Lựa chọn
     <span class="caret"></span></button>
     <ul class="dropdown-menu dropdown-menu-right">
-      <li><a href="#">Tài sản phòng</a></li>
-      <li><a href="#">Thông tin người thuê</a></li>
-      <li><a href="#">Tiền phòng</a></li>
+      <li><a href="tai_san_phong.php">Tài sản phòng</a></li>
+      <li><a href="nguoi_thue.php">Thông tin người thuê</a></li>
+      <li><a href="tien_phong.php">Tiền phòng</a></li>
       <li class="divider"></li>
       <li><a href="#">Ảnh các phòng</a></li>
     </ul>
@@ -42,7 +43,7 @@ if ($conn->connect_error) {
 <table class=table>
 <thead>
 <tr>
-  <th>ID</th>
+  <th>Phòng</th>
   <th>Tầng</th>
   <th>Diện tích</th>
   <th>Số người</th>

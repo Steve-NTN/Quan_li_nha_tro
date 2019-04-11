@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-  <title>Customer List</title>
+  <title>Tien phong</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -88,18 +88,19 @@ if ($result->num_rows > 0) {
 
 <?php
 $sql1 = "SELECT * FROM tien_phong";
-$sql2 ="SELECT SUM(`Tien_phong` + `Tien_nuoc` + `Tien_dien` + `Tien_mang` + Tien_no) Sum FROM `tien_phong` WHERE Ma_phong = 101";
 $result = $conn->query($sql1);
-$result2 = $conn->query($sql2);
-
 if ($result->num_rows > 0) {
 // output data of each row
   while($row = $result->fetch_assoc()) {
-     echo "<tr> <td>". $row["Ma_phong"] ."</td><td>". $row["Tien_no"] ."</td><tr>";
+    $sql2 ="SELECT SUM(`Tien_phong` + `Tien_nuoc` + `Tien_dien` + `Tien_mang` + Tien_no) Sum FROM `tien_phong` WHERE Ma_phong = ". $row["Ma_phong"];
+    $result2 = $conn->query($sql2);
+    $row1 = $result2->fetch_assoc();
+     echo "<tr> <td>". $row["Ma_phong"] ."</td><td>". $row1["Sum"] ."</td><tr>";
   }
 } else {
   echo "0 results";
 }
+
 $conn->close();
 ?> 
 

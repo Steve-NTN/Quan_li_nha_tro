@@ -34,7 +34,7 @@ if ($conn->connect_error) {
       <li><a href="nguoi_thue.php">Thông tin người thuê</a></li>
       <li><a href="tien_phong.php">Tiền phòng</a></li>
       <li class="divider"></li>
-      <li><a href="#">Ảnh các phòng</a></li>
+      <li><a href="anh_phong.html">Ảnh các phòng</a></li>
     </ul>
 </div>
 </div>

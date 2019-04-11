@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Customer List</title>
+  <title>Tai san phong</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -31,9 +31,7 @@ if ($conn->connect_error) {
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"  aria-expanded="false">Lựa chọn
     <span class="caret"></span></button>
     <ul class="dropdown-menu dropdown-menu-right">
-      <li><a href="#">Tài sản phòng</a></li>
-      <li><a href="#">Thông tin người thuê</a></li>
-      <li><a href="#">Tiền phòng</a></li>
+      
       <li class="divider"></li>
       <li><a href="quan_li_tro.php"><i class="fas fa-long-arrow-alt-left"></i> Back</a></li>
     </ul>

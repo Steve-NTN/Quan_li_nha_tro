@@ -31,9 +31,6 @@ if ($conn->connect_error) {
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"  aria-expanded="false">Lựa chọn
     <span class="caret"></span></button>
     <ul class="dropdown-menu dropdown-menu-right">
-      <li><a href="#">Tổng tiền phải thanh toán</a></li>
-      <li><a href="#"></a></li>
-      <li><a href="#">Tiền phòng</a></li>
       <li class="divider"></li>
       <li><a href="quan_li_tro.php"><i class="fas fa-long-arrow-alt-left"></i> Back</a></li>
     </ul>
@@ -76,7 +73,7 @@ if ($result->num_rows > 0) {
   </tbody>
 </table>
 
-<h4>Tổng tiền mỗi phòng phải thanh toán</h4>
+<h4>Số tiền mỗi phòng còn phải thanh toán</h4>
 <table class=table>
 <thead>
 <tr>
@@ -93,14 +90,39 @@ if ($result->num_rows > 0) {
 // output data of each row
   while($row = $result->fetch_assoc()) {
     $sql2 ="SELECT SUM(`Tien_phong` + `Tien_nuoc` + `Tien_dien` + `Tien_mang` + Tien_no) Sum FROM `tien_phong` WHERE Ma_phong = ". $row["Ma_phong"];
-    $result2 = $conn->query($sql2);
-    $row1 = $result2->fetch_assoc();
+    $result1 = $conn->query($sql2);
+    $row1 = $result1->fetch_assoc();
      echo "<tr> <td>". $row["Ma_phong"] ."</td><td>". $row1["Sum"] ."</td><tr>";
   }
 } else {
   echo "0 results";
 }
+?> 
 
+<table class=table>
+  <h4>Số ngày còn lại của mỗi phòng đến hạn nạp tiền</h4>
+<thead>
+<tr>
+  <th>Phòng</th>
+  <th>Số ngày đến hạn nạp tiền</th>
+</tr>
+</thead>
+<tbody>
+
+<?php
+$sql1 = "SELECT * FROM tien_phong";
+$result = $conn->query($sql1);
+if ($result->num_rows > 0) {
+// output data of each row
+  while($row = $result->fetch_assoc()) {
+    $sql2 ="SELECT Ma_phong, datediff(`Ngay_thu_tien`, now()) Ngay_con_lai FROM `tien_phong` WHERE 1";
+    $result1 = $conn->query($sql2);
+    $row1 = $result1->fetch_assoc();
+     echo "<tr> <td>". $row["Ma_phong"] ."</td><td>". $row1["Ngay_con_lai"] ."</td><tr>";
+  }
+} else {
+  echo "0 results";
+}
 $conn->close();
 ?> 
 

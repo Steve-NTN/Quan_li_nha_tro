@@ -55,7 +55,7 @@ if ($conn->connect_error) {
 <tbody>
 
 <?php
-$sql = "SELECT * FROM tien_phong";
+$sql = "SELECT * FROM Tien_phong";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -115,7 +115,7 @@ $result = $conn->query($sql1);
 if ($result->num_rows > 0) {
 // output data of each row
   while($row = $result->fetch_assoc()) {
-    $sql2 ="SELECT Ma_phong, datediff(`Ngay_thu_tien`, now()) Ngay_con_lai FROM `tien_phong` WHERE 1";
+    $sql2 ="SELECT Ma_phong, datediff(`Ngay_thu_tien`, `Ngay_thanh_toan`) Ngay_con_lai FROM `tien_phong` WHERE 1";
     $result1 = $conn->query($sql2);
     $row1 = $result1->fetch_assoc();
      echo "<tr> <td>". $row["Ma_phong"] ."</td><td>". $row1["Ngay_con_lai"] ."</td><tr>";

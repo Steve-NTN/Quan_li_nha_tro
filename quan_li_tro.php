@@ -7,6 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
 
@@ -31,11 +32,11 @@ if ($conn->connect_error) {
     <span class="caret"></span></button>
     <ul class="dropdown-menu dropdown-menu-right">
       <li><a href="tai_san_phong.php">Tài sản phòng</a></li>
-      <li><a href="nguoi_thue.php">Thông tin người thuê</a></li>
-      <li><a href="tien_phong.php">Tiền phòng</a></li>
-      <li><a href="them_phong.php">Thêm phòng</a></li>
+      <li><a href="nguoi_thue.php"><i class="fas fa-address-card"></i>  Thông tin người thuê</a></li>
+      <li><a href="tien_phong.php"><i class="fas fa-file-invoice-dollar"></i>  Tiền phòng</a></li>
+      <li><a href="them_phong.php"><i class="fas fa-plus"></i>  Thêm phòng</a></li>
       <li class="divider"></li>
-      <li><a href="anh_phong.html">Ảnh các phòng</a></li>
+      <li><a href="anh_phong.html"><i class="far fa-image"></i>  Ảnh các phòng</a></li>
     </ul>
 </div>
 </div>

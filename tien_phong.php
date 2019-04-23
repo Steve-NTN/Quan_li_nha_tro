@@ -31,6 +31,7 @@ if ($conn->connect_error) {
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"  aria-expanded="false">Lựa chọn
     <span class="caret"></span></button>
     <ul class="dropdown-menu dropdown-menu-right">
+      <li><a href="thay_doi_tien_phong.php"><i class="fas fa-edit"></i> Chỉnh sửa</a></li>
       <li class="divider"></li>
       <li><a href="quan_li_tro.php"><i class="fas fa-long-arrow-alt-left"></i> Back</a></li>
     </ul>
@@ -115,7 +116,7 @@ $result = $conn->query($sql1);
 if ($result->num_rows > 0) {
 // output data of each row
   while($row = $result->fetch_assoc()) {
-    $sql2 ="SELECT Ma_phong, datediff(`Ngay_thu_tien`, `Ngay_thanh_toan`) Ngay_con_lai FROM `tien_phong` WHERE 1";
+    $sql2 ="SELECT Ma_phong, datediff( date(now()), `Ngay_thanh_toan`) Ngay_con_lai FROM `tien_phong` WHERE 1";
     $result1 = $conn->query($sql2);
     $row1 = $result1->fetch_assoc();
      echo "<tr> <td>". $row["Ma_phong"] ."</td><td>". $row1["Ngay_con_lai"] ."</td><tr>";

@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   if(isset($_POST["dien_tich"])) $dien_tich = $_POST["dien_tich"];
   if(isset($_POST["so_ng"])) $so_ng = $_POST["so_ng"];
   if(isset($_POST["ngay_thue"])) $ngay_thue = $_POST["ngay_thue"];
-  $sql = "INSERT INTO `quan_li_phong`(`Ma_phong`, `Dien_tich`, `Tang`, `So_nguoi`, `Ngay_thue`) VALUES ('$id', '$tang', '$dien_tich', '$so_ng', '$ngay_thue')";
+  $sql = "INSERT INTO `quan_li_phong`(`Ma_phong`, `Tang`, `Dien_tich`, `So_nguoi`, `Ngay_thue`) VALUES ('$id', '$tang', '$dien_tich', '$so_ng', '$ngay_thue')";
   if($conn->query($sql) == TRUE) {
     echo "Thêm dữ liệu thành công.";
   } else {

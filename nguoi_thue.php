@@ -32,9 +32,9 @@ die("Connection failed: " . $conn->connect_error);
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"  aria-expanded="false">Lựa chọn
 <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right">
-  <li><a href="them_nguoi.php">Thêm người</a></li>
-  <li><a href="xoa_nguoi.php">Xóa người</a></li>
-  <li><a href="loc_nguoi_thue.php">Lọc ra người cùng phòng</a></li>
+  <li><a href="them_nguoi.php"><i class="fas fa-user-plus"></i>  Thêm người</a></li>
+  <li><a href="xoa_nguoi.php"><i class="fas fa-user-minus"></i>  Xóa người</a></li>
+  <li><a href="loc_nguoi_thue.php"><i class="fas fa-filter"></i>  Lọc ra người cùng phòng</a></li>
   <li class="divider"></li>
   <li><a href="quan_li_tro.php"><i class="fas fa-long-arrow-alt-left"></i> Back</a></li>
 </ul>

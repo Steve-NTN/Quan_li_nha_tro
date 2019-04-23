@@ -32,7 +32,7 @@ if ($conn->connect_error) {
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"  aria-expanded="false">Lựa chọn
     <span class="caret"></span></button>
     <ul class="dropdown-menu dropdown-menu-right">
-      <li><a href="thay_doi_tai_san.php">Chỉnh sửa</a></li>
+      <li><a href="thay_doi_tai_san.php"><i class="fas fa-edit"></i>  Chỉnh sửa</a></li>
       <li class="divider"></li>
       <li><a href="quan_li_tro.php"><i class="fas fa-long-arrow-alt-left"></i> Back</a></li>
     </ul>
